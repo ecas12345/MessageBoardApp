@@ -10,8 +10,19 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
+  getAllPostsInit = () => {
+    const promise = this.http.get(`${environment.postsBaseURL}/Forum/AllPosts`);
+
+    promise.subscribe(resp => {
+      sessionStorage.setItem('posts', JSON.stringify(resp));
+    },
+    error => {
+      console.log(error);
+    })
+  }
+
   getAllPosts = () => {
-      return this.http.get<Posts>(`${environment.postsBaseURL}/Forum/AllPosts`);     
+    return this.http.get<Posts>(`${environment.postsBaseURL}/Forum/AllPosts`);     
   }
 
   getAllPostsByUser = (userid) => {

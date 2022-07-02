@@ -5,13 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllPostsComponent } from './components/all-posts/all-posts.component';
 import { SearchPostsByUserComponent } from './components/search-posts-by-user/search-posts-by-user.component';
-import { Posts } from './interfaces/posts';
 import { PostsService } from './services/posts-service.service';
+import { CardModule } from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
 
 export function appInit(initPosts: PostsService) {
-    return () => initPosts.getAllPosts().subscribe((resp) => {
-      sessionStorage.setItem('posts', JSON.stringify(resp));
-    })
+    return () => initPosts.getAllPostsInit();
   }
 
 @NgModule({
@@ -23,7 +22,9 @@ export function appInit(initPosts: PostsService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [ PostsService,
     { provide: APP_INITIALIZER, useFactory: appInit, deps: [PostsService], multi: true}],

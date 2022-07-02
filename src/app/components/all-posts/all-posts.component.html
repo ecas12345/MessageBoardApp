@@ -1,1 +1,15 @@
-<p *ngFor="let post of postsJson">{{post.userid}}</p>
+<div>
+    <button style="left: 40%;" pButton [disabled]="this.refreshDisabled ? true : null" (click)="refreshPosts()">
+        Refresh Posts
+    </button>
+</div>
+<div *ngFor="let post of postsJson" class="cards">
+    <p-card >
+        <ng-template pTemplate="header">
+            <span style="padding: 0.1em;">
+                {{post.userid || 'Joe Smith'}} - {{post.title}}
+            </span>
+        </ng-template>
+        {{post.message}}
+    </p-card>
+</div>

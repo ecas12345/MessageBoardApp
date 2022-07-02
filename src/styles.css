@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.cards {
+    padding: 2%;
+    margin-top: .1em;
+    text-align: center;
+}
+
+.cards:first-child {
+    margin-top: 0%;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+}
