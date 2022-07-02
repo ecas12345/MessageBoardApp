@@ -11,6 +11,14 @@ export class AllPostsComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('posts') === null){
+      this.postsService.getAllPosts().subscribe((resp) => {
+        this.postsJson = resp;
+        console.log(this.postsJson);
+        sessionStorage.setItem('posts',JSON.stringify(this.postsJson));
+      })
+    }
+    
     this.postsService.getAllPosts().subscribe((resp) => {
       this.postsJson = resp;
       console.log(this.postsJson);

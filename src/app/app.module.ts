@@ -9,10 +9,10 @@ import { Posts } from './interfaces/posts';
 import { PostsService } from './services/posts-service.service';
 
 export function appInit(initPosts: PostsService) {
-  return (): Promise<Posts> => {
-    return initPosts.setAllPosts();
+    return () => initPosts.getAllPosts().subscribe((resp) => {
+      sessionStorage.setItem('posts', JSON.stringify(resp));
+    })
   }
-}
 
 @NgModule({
   declarations: [
