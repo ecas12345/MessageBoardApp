@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from  '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from  '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Posts } from '../interfaces/posts';
 
@@ -32,5 +32,9 @@ export class PostsService {
     return this.http.get(`${environment.postsBaseURL}/Forum/AllPostsByUser`,  {
       headers : headers
     });
-}
+  }
+
+  postMessage = (post) => {
+    return this.http.post(`${environment.postsBaseURL}/Forum/PostMessage`, post, {observe : 'response'});
+  }
 }

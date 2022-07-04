@@ -1,0 +1,8 @@
+<input type="text" pInputText class="p-inputtext-sm" [formControl]="name"/><br />
+<input type="text" pInputText class="p-inputtext-md" [formControl]="title"/><br />
+<textarea [formControl]="message" [rows]="5" [cols]="30" pInputTextarea autoResize="disabled"></textarea><br />
+
+
+<button pButton (click)="submitPost()">
+    Submit
+</button>
