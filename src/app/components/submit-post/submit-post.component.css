@@ -1,0 +1,8 @@
+#submitForm {
+    margin-left: 25%;
+    margin-top:5%;
+}
+
+#submitForm > * {
+    margin: 4%;
+}
