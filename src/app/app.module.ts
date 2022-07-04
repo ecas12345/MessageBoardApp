@@ -13,6 +13,7 @@ import { PostMessageFooterComponent } from './components/post-message-footer/pos
 import { SideBarNavComponent } from './components/side-bar-nav/side-bar-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SidebarModule } from 'primeng/sidebar';
 import { SubmitPostComponent } from './components/submit-post/submit-post.component';
 
 export function appInit(initPosts: PostsService) {
@@ -37,7 +38,8 @@ export function appInit(initPosts: PostsService) {
     InputTextModule,
     FormsModule,
     ReactiveFormsModule,
-    InputTextareaModule
+    InputTextareaModule,
+    SidebarModule
   ],
   providers: [ PostsService,
     { provide: APP_INITIALIZER, useFactory: appInit, deps: [PostsService], multi: true}],

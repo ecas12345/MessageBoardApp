@@ -29,6 +29,7 @@ export class SubmitPostComponent implements OnInit {
         this.name.reset();
         this.title.reset();
         this.message.reset();
+        sessionStorage.clear();
     },
     error => {
       alert("failed to post");

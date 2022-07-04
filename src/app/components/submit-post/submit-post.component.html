@@ -1,8 +1,19 @@
-<input type="text" pInputText class="p-inputtext-sm" [formControl]="name"/><br />
-<input type="text" pInputText class="p-inputtext-md" [formControl]="title"/><br />
-<textarea [formControl]="message" [rows]="5" [cols]="30" pInputTextarea autoResize="disabled"></textarea><br />
-
-
-<button pButton (click)="submitPost()">
-    Submit
-</button>
+<div class="container">
+    <div id="submitForm">
+        <span class="p-float-label">
+            <input type="text" pInputText class="p-inputtext-sm" [formControl]="name"/>
+            <label for="float-input">Name</label>
+        </span>
+        <span class="p-float-label">
+            <input type="text" pInputText class="p-inputtext-md" [formControl]="title"/>
+            <label for="float-input">Subject</label>
+        </span>
+        <span class="p-float-label">
+            <textarea [formControl]="message" [rows]="5" [cols]="30" pInputTextarea autoResize="disabled"></textarea><br />
+            <label for="float-input">Message</label>
+        </span>        
+        <button pButton (click)="submitPost()">
+            Submit
+        </button>
+    </div>
+</div>
