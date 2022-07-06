@@ -7,7 +7,7 @@
     <p-card >
         <ng-template pTemplate="header">
             <span style="padding: 0.1em;">
-                {{post.userid || 'Joe Smith'}} - {{post.title}}
+                <strong>{{post.userid || 'Joe Smith'}} - {{post.title}}</strong>
             </span>
         </ng-template>
         {{post.message}}
