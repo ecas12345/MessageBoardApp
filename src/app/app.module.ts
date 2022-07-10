@@ -9,11 +9,11 @@ import { PostsService } from './services/posts-service.service';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { PostMessageFooterComponent } from './components/post-message-footer/post-message-footer.component';
 import { SideBarNavComponent } from './components/side-bar-nav/side-bar-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SidebarModule } from 'primeng/sidebar';
+import { DividerModule } from 'primeng/divider';
 import { SubmitPostComponent } from './components/submit-post/submit-post.component';
 
 export function appInit(initPosts: PostsService) {
@@ -25,7 +25,6 @@ export function appInit(initPosts: PostsService) {
     AppComponent,
     AllPostsComponent,
     SearchPostsByUserComponent,
-    PostMessageFooterComponent,
     SideBarNavComponent,
     SubmitPostComponent
   ],
@@ -39,7 +38,8 @@ export function appInit(initPosts: PostsService) {
     FormsModule,
     ReactiveFormsModule,
     InputTextareaModule,
-    SidebarModule
+    SidebarModule,
+    DividerModule
   ],
   providers: [ PostsService,
     { provide: APP_INITIALIZER, useFactory: appInit, deps: [PostsService], multi: true}],
