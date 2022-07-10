@@ -4,3 +4,14 @@
     border-radius: 8px;
     color: rgb(33, 37, 41) !important;
 }
+
+:host ::ng-deep .refresh-button { 
+    left: 40%; 
+    margin-top: 2em; 
+    background: none !important; 
+    border: none !important
+}
+
+:host ::ng-deep .refresh-button:hover { 
+    background: #444559 !important;
+}
