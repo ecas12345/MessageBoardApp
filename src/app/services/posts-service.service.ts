@@ -10,11 +10,13 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPostsInit = () => {
+  getAllPostsInit = () =>  {
     const promise = this.http.get(`${environment.postsBaseURL}/Forum/AllPosts`);
 
-    promise.subscribe(resp => {
+    promise.toPromise()
+    .then(resp => {
       sessionStorage.setItem('posts', JSON.stringify(resp));
+      console.log("app loaded");
     },
     error => {
       console.log(error);
